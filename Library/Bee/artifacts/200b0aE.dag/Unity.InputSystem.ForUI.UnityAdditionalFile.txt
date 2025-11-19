@@ -1,1 +1,1 @@
-/Users/taraspanchuk/Unity projects/Capsule-Elite/third-person game demo
+/Users/taraspanchuk/Unity projects/third-person game demo
