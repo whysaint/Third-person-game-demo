@@ -1,0 +1,4 @@
+repository "third-person game demo/third-person game demo@20067094247560@cloud"
+  path "/"
+    br "/main"
+    co "/main"
