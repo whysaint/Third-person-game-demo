@@ -8,8 +8,9 @@ public class RelativeMoement : MonoBehaviour
 {
     [SerializeField] private Transform target;
 
-    private CharacterController characterController;
-    private ControllerColliderHit contact;
+    private CharacterController _characterController;
+    private ControllerColliderHit _contact;
+    private Animator _animator;
     
     public float moveSpeed = 6.0f;
     public float rotSpeed = 15.0f;
@@ -23,7 +24,8 @@ public class RelativeMoement : MonoBehaviour
 
     private void Start()
     {
-        characterController = GetComponent<CharacterController>();
+        _characterController = GetComponent<CharacterController>();
+        _animator = GetComponent<Animator>();
 
         _vertSpeed = minFall;
     }
@@ -51,10 +53,11 @@ public class RelativeMoement : MonoBehaviour
 
         if (_vertSpeed < 0 && Physics.Raycast(transform.position, Vector3.down, out hit))
         {
-            float check = (characterController.height + characterController.radius) / 1.9f;
+            float check = (_characterController.height + _characterController.radius) / 1.9f;
             hitGround = hit.distance <= check;
         }
         
+        _animator.SetFloat("Speed", movement.sqrMagnitude);
         
         if (hitGround)
         {
@@ -65,6 +68,7 @@ public class RelativeMoement : MonoBehaviour
             else
             {
                 _vertSpeed = minFall;
+                _animator.SetBool("Jumping", false);
             }
         }
         else
@@ -74,16 +78,21 @@ public class RelativeMoement : MonoBehaviour
             {
                 _vertSpeed = terminalVelocity;
             }
-            
-            if (characterController.isGrounded)
+
+            if (_contact != null)
             {
-                if (Vector3.Dot(movement, contact.normal) < 0)
+                _animator.SetBool("Jumping", true);
+            }
+            
+            if (_characterController.isGrounded)
+            {
+                if (Vector3.Dot(movement, _contact.normal) < 0)
                 {
-                    movement = contact.normal * moveSpeed;
+                    movement = _contact.normal * moveSpeed;
                 }
                 else
                 {
-                    movement += contact.normal * moveSpeed;
+                    movement += _contact.normal * moveSpeed;
                 }
             }
         }
@@ -91,11 +100,11 @@ public class RelativeMoement : MonoBehaviour
         movement.y = _vertSpeed;
         
         movement *= Time.deltaTime;
-        characterController.Move(movement);
+        _characterController.Move(movement);
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        contact = hit;
+        _contact = hit;
     }
 }
