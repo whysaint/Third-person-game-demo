@@ -46,6 +46,9 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/DoorOpenDevice.cs" />
+    <Compile Include="Assets/Scripts/DeviceOperator.cs" />
+    <Compile Include="Assets/Scripts/ColorChangeDevice.cs" />
     <Compile Include="Assets/Scripts/RelativeMoement.cs" />
     <Compile Include="Assets/Scripts/OrbitCamera.cs" />
     <Reference Include="UnityEngine">
