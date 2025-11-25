@@ -404,6 +404,7 @@
 -analyzer:"/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 "Assets/Scripts/ColorChangeDevice.cs"
 "Assets/Scripts/DeviceOperator.cs"
+"Assets/Scripts/DeviceTrigger.cs"
 "Assets/Scripts/DoorOpenDevice.cs"
 "Assets/Scripts/OrbitCamera.cs"
 "Assets/Scripts/RelativeMoement.cs"
