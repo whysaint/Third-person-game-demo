@@ -407,7 +407,11 @@
 "Assets/Scripts/DeviceOperator.cs"
 "Assets/Scripts/DeviceTrigger.cs"
 "Assets/Scripts/DoorOpenDevice.cs"
+"Assets/Scripts/IGameManager.cs"
+"Assets/Scripts/InventoryManager.cs"
+"Assets/Scripts/Managers.cs"
 "Assets/Scripts/OrbitCamera.cs"
+"Assets/Scripts/PlayerManager.cs"
 "Assets/Scripts/RelativeMoement.cs"
 -langversion:9.0
 /deterministic
