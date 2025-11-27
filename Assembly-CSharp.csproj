@@ -46,16 +46,17 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Scripts/DoorOpenDevice.cs" />
-    <Compile Include="Assets/Scripts/InventoryManager.cs" />
+    <Compile Include="Assets/Scripts/Devices/DoorOpenDevice.cs" />
+    <Compile Include="Assets/Scripts/Managers/InventoryManager.cs" />
+    <Compile Include="Assets/Scripts/Managers/IGameManager.cs" />
     <Compile Include="Assets/Scripts/CollectibleItem.cs" />
-    <Compile Include="Assets/Scripts/DeviceOperator.cs" />
-    <Compile Include="Assets/Scripts/ColorChangeDevice.cs" />
-    <Compile Include="Assets/Scripts/Managers.cs" />
+    <Compile Include="Assets/Scripts/Devices/DeviceTrigger.cs" />
+    <Compile Include="Assets/Scripts/Managers/Managers.cs" />
+    <Compile Include="Assets/Scripts/BasicUI.cs" />
     <Compile Include="Assets/Scripts/RelativeMoement.cs" />
-    <Compile Include="Assets/Scripts/DeviceTrigger.cs" />
-    <Compile Include="Assets/Scripts/PlayerManager.cs" />
-    <Compile Include="Assets/Scripts/IGameManager.cs" />
+    <Compile Include="Assets/Scripts/Devices/DeviceOperator.cs" />
+    <Compile Include="Assets/Scripts/Managers/PlayerManager.cs" />
+    <Compile Include="Assets/Scripts/Devices/ColorChangeDevice.cs" />
     <Compile Include="Assets/Scripts/OrbitCamera.cs" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
