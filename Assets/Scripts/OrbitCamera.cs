@@ -22,14 +22,7 @@ public class OrbitCamera : MonoBehaviour
         float horInput = Input.GetAxis("Horizontal");
         float mouseX = Input.GetAxis("Mouse X");
         
-        if (!Mathf.Approximately(horInput, 0))
-        {
-            _rotY += horInput * rotSpeedKeyboard * Time.deltaTime;
-        }
-        else
-        {
-            _rotY += mouseX * rotSpeedMouse * 3 * Time.deltaTime;
-        }
+        _rotY += (horInput * rotSpeedKeyboard + mouseX * rotSpeedMouse * 3) * Time.deltaTime;
         
         Quaternion rotation = Quaternion.Euler(0, _rotY, 0);
         transform.position = target.position - (rotation * _offset);
